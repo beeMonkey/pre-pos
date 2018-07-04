@@ -43,8 +43,6 @@ function countSameElements(collection) {
     });
   })
   return arr;
-  console.log(map)
-  console.log(arr)
 }
 
 // 失败代码，注意要用key-value
