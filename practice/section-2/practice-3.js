@@ -3,6 +3,7 @@
 function countSameElements(collection) {
   // key-value
   var map = new Map();
+  //var map = {};
   // 遍历集合中所有字符串
   for(var i=0;i<collection.length;i++){
     // 判断字符串长度， 如果等于1，直接做统计，否则做特殊处理统计
@@ -21,11 +22,29 @@ function countSameElements(collection) {
         map.set(ele, 0);
       }
       // 取字符串中的数字并做类型转换
-      var num= Number(collection[i].replace(/[^0-9]/ig,""));
+      var nums= Number(collection[i].replace(/[^0-9]/ig,""));
       map.set(ele,map.get(ele) + nums);
     }
   }
+  var arr=[];
+  //arr.push(map);
+  for(var key in map){
+    console.log(key);
+    console.log(map[key]);
+    arr.push({
+      name:key,
+      summary:map[key]
+    });
+  }
+  map.forEach(function(value,key){
+    arr.push({
+      name:key,
+      summary:value
+    });
+  })
+  return arr;
   console.log(map)
+  console.log(arr)
 }
 
 // 失败代码，注意要用key-value
